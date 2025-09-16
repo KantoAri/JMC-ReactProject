@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="flex justify-between items-center p-4 border-b-2 border-gray-300">
+    <nav>
       <div>
         <img src={logoImg} alt="jmc logo" />
       </div>
@@ -25,7 +25,11 @@ const Navbar = () => {
         </ul>
       </div>
       <div>
-        <a href="https://www.linkedin.com/in/jeanmorvan" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://www.linkedin.com/in/jeanmorvan"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img src={linkedin} alt="linkedin logo" />
         </a>
       </div>
