@@ -85,7 +85,7 @@ const HeroSection = () => {
 
             <div
               className="text-us flex-column flex-md-row d-md-flex  "
-              style={{ height: "15rem" }}
+              style={{ height: "17rem" }}
             >
               <div className=" me-md-4 mb-md-0">
                 <p>
@@ -110,11 +110,9 @@ const HeroSection = () => {
                       e.target.style.textDecoration = "none";
                     }}
                   >
-                    PC SOFT
+                    PC SOFT.
                   </a>
-                  .
-                </p>
-                <p>
+                  <br />
                   Madagascar a un potentiel unique en tant que hub technologique
                   pour les professionnels francophones. Notre implantation dans
                   cette île dynamique nous permet de bénéficier d'un
@@ -122,7 +120,7 @@ const HeroSection = () => {
                 </p>
               </div>
               <div className=" pl-6 d-none d-md-block">
-                <img src={img} alt="" height="200rem" width="410rem" />
+                <img src={img} alt="" height="250rem" width="380rem" />
               </div>
             </div>
             <div className="text-us ">
