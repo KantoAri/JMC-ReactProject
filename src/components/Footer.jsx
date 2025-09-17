@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 import linkedin from "../assets/linkedin.png";
+import { FaPhoneAlt } from "react-icons/fa";
+import { IoMail } from "react-icons/io5";
+import { FaLocationDot } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -26,20 +29,18 @@ const Footer = () => {
 
             <div className="mt-3">
               <div className="mb-3">
-                <i className="fas fa-map-marker-alt text-info me-2"></i>
+                <FaLocationDot className="text-info me-2 fs-5" />
                 <span>
-                  Immeuble NIRINA 29 - 1er étage
-                  <br />
-                  Ambohibao - ANTANANARIVO - 105 -<br />
-                  BP 11034 Poste DIGUES - MADAGASCAR
+                  Immeuble NIRINA 29 - 1er étage Ambohibao - ANTANANARIVO - 105
+                  - BP 11034 Poste DIGUES - MADAGASCAR
                 </span>
               </div>
               <div className="mb-3">
-                <i className="fas fa-phone text-info me-2"></i>
+                <FaPhoneAlt className="text-info me-2 fs-5" />
                 <span>(+261) 32 05 369 00</span>
               </div>
               <div className="mb-3">
-                <i className="fas fa-envelope text-info me-2"></i>
+                <IoMail className="text-info me-2 fs-5" />
                 <span>j.morvan@jm-contacts.com</span>
               </div>
             </div>
@@ -94,24 +95,23 @@ const Footer = () => {
                 href="https://www.linkedin.com/in/jeanmorvan"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="d-inline-block p-2 bg-info rounded"
               >
                 <img
                   src={linkedin}
                   alt="Logo LinkedIn"
-                  width="40"
-                  height="40"
+                  width="50"
+                  height="50"
                 />
               </a>
             </div>
           </div>
         </div>
 
-        <hr className="border-secondary my-4" />
+        <hr className="border-light my-4" />
 
         <div className="row">
           <div className="col-12 text-center">
-            <p className="mb-0 text-muted">Copyright © 2025 JM-Contacts</p>
+            <p className="mb-0 ">Copyright © 2025 JM-Contacts</p>
           </div>
         </div>
       </div>
