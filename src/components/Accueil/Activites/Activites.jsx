@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { FaCubes } from "react-icons/fa";
-import { Container } from "react-bootstrap";
 import CardUI from "./CardUI";
 import ValueCard from "./ValueCard";
 import devSpec from "../../../assets/dev-specifique.webp";
@@ -9,6 +8,8 @@ import editeur from "../../../assets/editeur.webp";
 import exp from "../../../assets/expericence-150x150.png";
 import passion from "../../../assets/passion-150x150.png";
 import innovation from "../../../assets/inovant-150x150.png";
+import backImg from "../../../assets/header-contact-scaled-1-2048x1366.webp";
+import { FaChevronCircleRight } from "react-icons/fa";
 import "./Activites.css";
 import "./ValueCard.css";
 
@@ -182,7 +183,10 @@ const Activites = () => {
               nos clients. Nous croyons que ces trois éléments sont essentiels
               pour offrir les meilleurs services possibles à nos clients{" "}
             </p>
-            <div className="values-grid-container mt-4">
+            <div
+              className="values-grid-container mt-4  "
+              style={{ width: "90%", margin: "0 auto" }}
+            >
               {valuesData.map((value, index) => (
                 <ValueCard
                   key={index}
@@ -196,12 +200,59 @@ const Activites = () => {
             </div>
           </div>{" "}
         </div>
-        <div></div>
-        <div>
-          <h2>Avez-vous une idée de projet ?</h2>
-          <p>Nos experts sont là pour vous aider</p>
-          <button>
-            <Link to="/contact">Contactez-nous</Link>
+      </div>
+      <div
+        className="py-5 position-relative"
+        style={{
+          width: "100%",
+          backgroundImage: `url(${backImg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          padding: "100px ",
+        }}
+      >
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(0, 0, 0, 0.6)",
+          }}
+        ></div>
+
+        <div className="position-relative" style={{ zIndex: 1 }}>
+          <h2 className="titleh2 text-left text-light mb-5 position-relative">
+            Avez-vous une idée de projet ?
+            <span
+              style={{
+                position: "absolute",
+                bottom: "-20px",
+                left: 0,
+                width: "9rem",
+                height: "5px",
+                backgroundColor: "#fa9805ff",
+              }}
+            ></span>
+          </h2>
+          <p className="text-light mb-4">Nos experts sont là pour vous aider</p>
+          <button
+            className="btn btn-primary btn-lg p-3 "
+            style={{ width: "15rem" }}
+          >
+            <FaChevronCircleRight className="me-2 text-white" />
+
+            <Link
+              to="/contact"
+              style={{
+                color: "white",
+                textDecoration: "none",
+                fontSize: "1.1rem",
+              }}
+            >
+              Contactez-nous
+            </Link>
           </button>
         </div>
       </div>
