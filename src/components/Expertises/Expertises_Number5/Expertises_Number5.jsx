@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './Expertises_Number5.css';
 const ExpertisesNumber5 = () => {
   return (
     <section className="cms-section">

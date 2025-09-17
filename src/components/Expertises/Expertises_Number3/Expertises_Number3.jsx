@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './Expertises_Number3.css';
 const ExpertisesNumber3 = () => {
   return (
     <section className="windev-dimensions-section">

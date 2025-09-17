@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './Expertises_Number4.css';
 const ExpertisesNumber4 = () => {
   return (
     <section className="php-section">

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './Expertises_Number2.css';
 const ExpertisesNumber2 = () => {
   return (
     <section className="pcsoft-section">
