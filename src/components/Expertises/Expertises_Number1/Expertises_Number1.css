@@ -1,6 +1,6 @@
 
 .expertises-section {
-  
+   
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -9,6 +9,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 .expertises-container {
   width: 100%;
@@ -81,10 +82,32 @@
   border: 2px solid #ff6600;
   transform: scale(1.05);
   color: white;
+  font-size: 1.2rem;
 }
 
 
 .expertises-button i {
   font-size: 1.2rem;
   color: white;
+  transition: all 0.3s ease;
 }
+
+/*.expertises-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 119, 146, 0.45); /* bleu clair transparent 
+  z-index: 1;
+  pointer-events: none;
+   will-change: transform
+}*/
+
+.exp-highlight {
+  border-bottom: 4px solid #ff6600; /* soulignement orange */
+  padding-bottom: 5px;
+  display: inline-block;
+  color: white; 
+}
+

@@ -1,0 +1,106 @@
+.windev-dimensions-section {
+  background-color: white;
+  padding: 80px 40px;
+  font-family: "Roboto", sans-serif;
+}
+
+.windev-dimensions-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.windev-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #1e1e1e;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.windev-intro {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  color: #444;
+}
+
+.windev-main-image img {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto 60px;
+  display: block;
+}
+
+.windev-dimensions-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+}
+
+.dimension-card {
+  flex: 1;
+  min-width: 280px;
+  max-width: 400px;
+  padding: 30px;
+  border-radius: 12px;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.mobile-dimension {
+  background-color: #ff6600;
+}
+
+.gestion-dimension {
+  background-color: #666;
+}
+
+.web-dimension {
+  background-color: #1e77b2;
+}
+.mobile-dimension .dimension-icon,
+.web-dimension .dimension-icon {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
+.dimension-icon {
+  width: 150px;
+  height: 150px; 
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.windev-innovation {
+  background-color: #f5f5f5;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  color: #333;
+}
+
+.windev-innovation h4 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color:rgb(42, 146, 206);
+}
+
+.windev-innovation p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.innovation-icon {
+  width: 80px;
+  height: auto;
+}
