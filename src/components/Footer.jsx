@@ -111,7 +111,7 @@ const Footer = () => {
 
         <div className="row">
           <div className="col-12 text-center">
-            <p className="mb-0 ">Copyright © 2025 JM-Contacts</p>
+            <p className="mb-0">Copyright © 2025 JM-Contacts</p>
           </div>
         </div>
       </div>
