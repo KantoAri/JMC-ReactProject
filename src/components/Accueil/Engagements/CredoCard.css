@@ -1,0 +1,13 @@
+.credo-card2 {
+  background-color: #4e5357;
+  border: 1px solid #691111;
+  color: white;
+  border-radius: 0.2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  font-size: 1.6rem;
+}
+
+.credo-card2 .svg-inline--fa {
+  font-size: 2.5rem;
+  color: white;
+}

@@ -1,0 +1,38 @@
+.engagement-circle {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.engagement-circle svg {
+  font-size: 3rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.circle-text {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.circle-blue {
+  background-color: #c7e1ef75;
+}
+
+.circle-orange {
+  background-color: #f7e1b585;
+  z-index: 0;
+}
+
+.circle-gray {
+  background-color: #cccccc88;
+}
