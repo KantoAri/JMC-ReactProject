@@ -4,7 +4,7 @@ import Homepage from "../pages/Homepage";
 import Expertises from "../pages/Expertises";
 import OffresDeServices from "../pages/OffresDeServices";
 import Contact from "../pages/Contact";
-import MentionLegales from "../pages/MentionLegales";
+import MentionLegalesPage from "../pages/MentionLegalesPage";
 
 const MainRoute = () => {
   return (
@@ -16,7 +16,7 @@ const MainRoute = () => {
             <Route path="/expertises" element={<Expertises />} />
             <Route path="/offres-de-services" element={<OffresDeServices />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/mentions-legales" element={<MentionLegales />} />
+            <Route path="/mentions-legales" element={<MentionLegalesPage />} />
           </Route>
         </Routes>
       </Router>
