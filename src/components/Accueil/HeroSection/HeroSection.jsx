@@ -1,22 +1,29 @@
 import { useState, useEffect } from "react";
 import "../acceuil.css";
 import "./HeroSection.css";
-import backgroundImg from "../../../assets/computer-jm-contacts.webp";
+import backgroundImg from "../../../assets/computer-jm-contacts.jpg";
 import { Link } from "react-router-dom";
 import { FaChevronCircleRight } from "react-icons/fa";
 
 const HeroSection = () => {
+  const [animationComplete, setAnimationComplete] = useState(false);
+
+  useEffect(() => {
+    setAnimationComplete(true);
+  }, []);
+
   return (
     <div>
       <div
         className="container-fluid hello position-relative pt-3"
         style={{
           backgroundImage: ` linear-gradient(to right, rgba(52, 148, 206, 0.52), rgba(46, 206, 255, 0.5)), url(${backgroundImg})`,
-          backgroundSize: "100% 120%",
+          backgroundSize: "100% 110%",
           minHeight: "100vh",
-          backgroundPosition: "top",
+          backgroundPosition: animationComplete ? "bottom" : "top",
           backgroundRepeat: "no-repeat",
-          border: "0",
+          transition: "background-position 2s ease-in-out",
+          animation: animationComplete ? "jump 1s ease-in-out" : "none",
         }}
       >
         <div className="container">
