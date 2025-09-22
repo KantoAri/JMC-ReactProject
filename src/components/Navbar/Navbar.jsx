@@ -21,13 +21,12 @@ const Navbar = () => {
     };
 
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 992); // Bootstrap lg breakpoint
+      setIsMobile(window.innerWidth < 992); 
     };
 
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleResize);
 
-    // Initialize on mount
     handleResize();
 
     return () => {
