@@ -19,6 +19,7 @@ const CardUI = ({ image, title, description, className = "" }) => {
         >
           {typeof image === "string" ? (
             <div
+              className="position-static position-md-relative"
               style={{
                 height: "100%",
                 width: "100%",
