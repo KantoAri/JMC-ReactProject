@@ -32,7 +32,10 @@ const AboutUs = () => {
   return (
     <div style={{ overflowX: "hidden" }}>
       <div className="container py-4 py-md-5">
-        <div className="row" style={{ margin: window.innerWidth >= 992 ? "0 5rem" : "0" }}>
+        <div
+          className="row"
+          style={{ margin: window.innerWidth >= 992 ? "0 5rem" : "0" }}
+        >
           <div className="col-lg-20 col-12 mb-4">
             <h2 className="titleh2 text-left mb-4 position-relative">
               Qui sommes-nous ?
@@ -49,7 +52,7 @@ const AboutUs = () => {
             </h2>
 
             <div
-              className="text-us flex-column flex-md-row d-flex"
+              className="text-us2 flex-column flex-md-row d-flex"
               style={{ height: "auto", minHeight: "17rem" }}
             >
               <div className="me-md-4 mb-3 mb-md-0">
@@ -103,7 +106,7 @@ const AboutUs = () => {
               </div>
             </div>
 
-            <div className="text-us">
+            <div className="text-us2">
               <p>
                 Nous mettons à disposition de nos clients des collaborateurs
                 dédiés : Chefs de projets, développeurs séniors et développeurs

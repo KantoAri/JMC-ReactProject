@@ -1,6 +1,66 @@
 .text-us {
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  line-height: clamp(1.4rem, 3.5vw, 2rem);
+  color: #ffffff;
+  text-align: justify;
+}
+.text-us2 {
   font-size: 1rem;
   line-height: 2rem;
   color: #555;
   text-align: justify;
+}
+@media (max-width: 768px) {
+  .col-lg-6.col-md-8.col-12 {
+    min-height: 100vh;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .container-fluid {
+    background-size: cover !important;
+    background-position: center !important;
+  }
+
+  .text-us {
+    color: #fff !important;
+    text-align: left !important;
+    font-size: 1rem !important;
+    line-height: 2rem !important;
+  }
+
+  .btn-lg {
+    margin-top: 3.5rem;
+    width: 100% !important;
+    font-size: 1.5rem !important;
+    padding: 1.2rem 1rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .container-fluid {
+    padding-top: 1rem !important;
+    min-height: 90vh !important;
+  }
+  .my-2s {
+    margin-top: 6rem !important;
+  }
+  .hello {
+    max-height: 100vh !important;
+  }
+  .mb-3.mb-md-5 {
+    margin-bottom: 1rem !important;
+  }
+
+  .mb-4.mb-md-5 {
+    margin-bottom: 1.5rem !important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .col-lg-6.col-md-8.col-12 {
+    margin-left: 2rem !important;
+  }
 }

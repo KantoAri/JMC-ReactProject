@@ -1,17 +1,56 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import logoImg from "../../assets/logoreact.png";
 import linkedin from "../../assets/linkedin.png";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+
 const Navbar = () => {
   const [isNavCollapsed, setIsNavCollapsed] = useState(true);
+  const [scrolled, setScrolled] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 992); // Bootstrap lg breakpoint
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
+
+    // Initialize on mount
+    handleResize();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  // Determine navbar position style based on screen size
+  const navbarPositionStyle = isMobile ? "fixed" : "absolute";
+
+  // Determine navbar background color based on screen size and scroll position
+  const navbarBackgroundColor = isMobile && scrolled ? "#c6eef3" : "#c6eef365";
+
   return (
     <nav
-      className="navbar navbar-expand-lg navbar-light position-absolute top-0 w-100"
-      style={{ backgroundColor: "#c6eef365", zIndex: "9999" }}
+      className={`navbar navbar-expand-lg navbar-light top-0 w-100`}
+      style={{
+        backgroundColor: navbarBackgroundColor,
+        zIndex: "9999",
+        position: navbarPositionStyle,
+        transition: "background-color 0.3s ease",
+      }}
     >
       <div className="container">
         <Link className="navbar-brand" to="/">
@@ -102,81 +141,6 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @media (max-width: 991.98px) {
-          .sidebar-menu {
-            position: fixed;
-            top: 0;
-            right: -250px;
-            width: 250px;
-            height: 100vh;
-            background-color: #a3b0b1ff;
-            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            padding: 20px;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            padding-top: 80px;
-            box-shadow: -5px 0 15px rgba(0, 0, 0, 0);
-            opacity: 0;
-            visibility: hidden;
-          }
-
-          .sidebar-menu.expanded {
-            right: 0;
-            opacity: 1;
-            visibility: visible;
-            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-          }
-
-          .navbar-nav {
-            width: 100%;
-          }
-
-          .nav-item {
-            margin: 10px 0;
-            transform: translateX(20px);
-            opacity: 0;
-            transition: all 0.3s ease;
-            transition-delay: 0.1s;
-          }
-
-          .sidebar-menu.expanded .nav-item {
-            transform: translateX(0);
-            opacity: 1;
-          }
-
-          .sidebar-menu.expanded .nav-item:nth-child(2) {
-            transition-delay: 0.15s;
-          }
-
-          .sidebar-menu.expanded .nav-item:nth-child(3) {
-            transition-delay: 0.2s;
-          }
-
-          .sidebar-menu.expanded .nav-item:nth-child(4) {
-            transition-delay: 0.25s;
-          }
-
-          .btn-close {
-            opacity: 0.8;
-            transition: opacity 0.2s ease;
-          }
-
-          .btn-close:hover {
-            opacity: 1;
-          }
-        }
-
-        @media (min-width: 992px) {
-          .sidebar-menu {
-            display: flex !important;
-          }
-        }
-      `}</style>
     </nav>
   );
 };
