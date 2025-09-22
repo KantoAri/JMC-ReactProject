@@ -66,9 +66,12 @@ const Activites = () => {
   ];
 
   return (
-    <>
-      <div className="container-fluid wave-bg">
-        <div className="container py-5">
+    <div className="wave-bg">
+      <div className="container wave-bg">
+        <div
+          className="container"
+          style={{ paddingBottom: "7rem", paddingTop: "5rem" }}
+        >
           <div className="text-center mb-4">
             <h2
               className="display-5 mb-3"
@@ -256,7 +259,7 @@ const Activites = () => {
           </button>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import "../acceuil.css";
 import img from "../../../assets/topng.png";
 import "./HeroSection.css";
@@ -6,26 +7,40 @@ import { Link } from "react-router-dom";
 import { FaChevronCircleRight } from "react-icons/fa";
 
 const HeroSection = () => {
+  const [animationComplete, setAnimationComplete] = useState(false);
+
+  useEffect(() => {
+    setAnimationComplete(true);
+  }, []);
+
   return (
     <div>
       <div
         className="container-fluid position-relative pt-3"
         style={{
-          backgroundImage: `linear-gradient( #31a9ce85, #61d6faab), url(${backgroundImg})`,
-          backgroundSize: "cover",
+          backgroundImage: ` linear-gradient(to right, rgba(52, 148, 206, 0.52), rgba(46, 206, 255, 0.5)), url(${backgroundImg})`,
+          backgroundSize: "100% 120%",
           minHeight: "100vh",
-          backgroundPosition: "center",
+          backgroundPosition: "top",
           backgroundRepeat: "no-repeat",
           border: "0",
+          transition: "all 1.2s cubic-bezier(0.34, 1.56, 0.64, 1)",
         }}
       >
         <div className="container">
           <div className="row py-md-5 py-3 my-md-5 my-2">
-            <div className="col-lg-6 col-md-8 col-12 text-left p-md-4 p-3 rounded text-white">
+            <div
+              className="col-lg-6 col-md-8 col-12 text-left p-md-4 p-3 rounded text-white ms-5"
+              style={{ marginLeft: "4rem" }}
+            >
               <div className="mb-3 mb-md-5">
                 <h1
-                  className="display-2 display-md-3 display-lg-2 fw-bold position-relative text-white"
-                  style={{ paddingBottom: "20px" }}
+                  className="fw-bold position-relative text-white"
+                  style={{
+                    paddingBottom: "20px",
+                    marginTop: "50px",
+                    fontSize: "5rem",
+                  }}
                 >
                   JM-Contacts{" "}
                   <span

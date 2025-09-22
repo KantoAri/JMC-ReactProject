@@ -6,37 +6,39 @@ const CardUI = ({ image, title, description, className = "" }) => {
         style={{
           backgroundColor: "#f8f9fa",
           borderRadius: "20px",
-          transition: "transform 0.3s ease, box-shadow 0.3s ease",
-        }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.transform = "translateY(-5px)";
-          e.currentTarget.style.boxShadow = "0 8px 25px rgba(0,0,0,0.15)";
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.transform = "translateY(0)";
-          e.currentTarget.style.boxShadow = "0 2px 10px rgba(0,0,0,0.1)";
         }}
       >
         <div
           className="card-img-top d-flex justify-content-center align-items-center"
           style={{
-            height: "300px",
+            height: "400px",
             backgroundColor: "#e9ecef",
             borderRadius: "10px 10px 0 0",
             overflow: "hidden",
           }}
         >
           {typeof image === "string" ? (
-            <img
-              src={image}
-              alt={title}
-              className="img-fluid"
+            <div
               style={{
                 height: "100%",
                 width: "100%",
-                objectFit: "cover",
+                overflow: "hidden",
               }}
-            />
+            >
+              <img
+                src={image}
+                alt={title}
+                className="img-fluid"
+                style={{
+                  height: "100%",
+                  width: "100%",
+                  objectFit: "cover",
+                  transition: "transform 0.3s ease-in-out",
+                }}
+                onMouseEnter={(e) => (e.target.style.transform = "scale(1.1)")}
+                onMouseLeave={(e) => (e.target.style.transform = "scale(1)")}
+              />
+            </div>
           ) : (
             image
           )}

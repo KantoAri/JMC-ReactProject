@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <nav
       className="navbar position-absolute top-0 w-100 navbar-expand-lg navbar-light"
-      style={{ height: "100px", backgroundColor: "#c6eef3a8", zIndex: "9999" }}
+      style={{ height: "100px", backgroundColor: "#c6eef365", zIndex: "9999" }}
     >
       <div className="container">
         <Link className="navbar-brand" to="/">

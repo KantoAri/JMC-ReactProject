@@ -5,8 +5,11 @@ import "./ValueCard.css";
 const ValueCard = ({ icon, title, description, height, width }) => {
   return (
     <Card
-      className="value-card h-100 shadow border-0"
-      style={{ borderRadius: 0 }}
+      className="value-card h-100 border-0"
+      style={{
+        borderRadius: 0,
+        boxShadow: "8px 8px 12px rgba(0, 0, 0, 0.62)",
+      }}
     >
       <Card.Body className="d-flex flex-row align-items-center p-4 text-left ">
         <div className="value-card-icon-wrapper mb-3" style={{ height, width }}>
