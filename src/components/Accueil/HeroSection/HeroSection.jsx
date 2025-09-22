@@ -1,7 +1,7 @@
 import "../acceuil.css";
 import img from "../../../assets/topng.png";
 import "./HeroSection.css";
-import backgroundImg from "../../../assets/background.jpeg";
+import backgroundImg from "../../../assets/computer-jm-contacts.webp";
 import { Link } from "react-router-dom";
 import { FaChevronCircleRight } from "react-icons/fa";
 

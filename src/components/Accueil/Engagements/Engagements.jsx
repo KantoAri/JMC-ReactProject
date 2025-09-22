@@ -42,25 +42,30 @@ const Engagements = () => {
           services de:
         </p>
       </div>
-S
-      <Row className="justify-content-center">
+
+      <Row className="justify-content-center " style={{ maxWidth: "99vw" }}>
         <EngagementCircle
           icon={<FaCode />}
           text="Développement sur mesure"
-          color="#c7e1ef9f"
+          color="#c7e1ef79"
+          absolute="relative"
+          zIndex={2}
+        />
+        <EngagementCircle
+          icon={<FaExchangeAlt />}
+          text="Migration d'applications "
+          color="#ccccccb6"
+          absolute="relative"
+          zIndex={2}
         />
         <EngagementCircle
           icon={<FaCog />}
           text="Tierce maintenance applicative"
-          color="#f7e1b58f"
-        />
-        <EngagementCircle
-          icon={<FaExchangeAlt />}
-          text="Migration d'applications"
-          color="#cccccc9c"
+          color="#f7e1b5d3"
+          absolute="absolute"
+          zIndex={-3}
         />
       </Row>
-
       <div style={{ width: "80%", margin: "0 auto" }}>
         <p className="mt-5">
           Chez <strong>JM-CONTACTS, </strong> nous sommes fiers de notre
@@ -70,7 +75,6 @@ S
           aux evolutions du marché.
         </p>
       </div>
-
       <Container className="my-5">
         <h2
           className="display-5 text-center mb-5"
