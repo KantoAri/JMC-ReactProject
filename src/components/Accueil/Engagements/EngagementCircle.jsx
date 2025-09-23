@@ -28,10 +28,12 @@ const EngagementCircle = ({ icon, text, color, absolute, zIndex }) => {
   return (
     <Col
       md={4}
-      className="mb-3 d-flex justify-content-center my-3 my-md-0"
+      className={`mb-3 d-flex justify-content-center my-3 my-md-0 ${
+        !isMobile ? "custom-width" : ""
+      }`}
       style={{
         position: !isMobile ? absolute : "static",
-        width: !isMobile ? "38.333%" : "100%",
+        width: !isMobile ? "48%" : "100%",
       }}
     >
       <div className="engagement-circle" style={circleStyle}>

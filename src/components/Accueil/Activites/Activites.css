@@ -42,3 +42,31 @@
   height: 200px;
   object-fit: cover;
 }
+.btn-animated {
+  width: 15rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.btn-animated:hover {
+  background-color: rgba(61, 105, 199, 0.541) !important;
+  transform: scale(1.05);
+  animation: bounceHover 1s ease;
+  border: 1.9px solid #4673ad !important;
+  color: #4673ad !important;
+}
+
+@keyframes bounceHover {
+  0% {
+    transform: scale(1.15);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1.15);
+  }
+}

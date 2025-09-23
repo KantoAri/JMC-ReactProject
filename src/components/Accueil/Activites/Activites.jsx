@@ -252,12 +252,8 @@ const Activites = () => {
             <p className="text-light mb-4">
               Nos experts sont là pour vous aider
             </p>
-            <button
-              className="btn btn-primary btn-lg p-3 "
-              style={{ width: "15rem" }}
-            >
+            <button className="btn btn-primary btn-lg p-3 btn-animated">
               <FaChevronCircleRight className="me-2 text-white" />
-
               <Link
                 to="/contact"
                 style={{

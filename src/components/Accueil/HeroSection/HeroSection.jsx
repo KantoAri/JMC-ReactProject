@@ -70,7 +70,7 @@ const HeroSection = () => {
                 Au service des SSII et éditeurs francophones
               </p>
               <button
-                className="btn btn-lg px-md-5 px-3  py-md-3 w-60 w-md-auto"
+                className="btn btn-animated2 btn-lg px-md-5 px-3  py-md-3 w-60 w-md-auto"
                 style={{
                   backgroundColor: "#fa9805ff",
                 }}

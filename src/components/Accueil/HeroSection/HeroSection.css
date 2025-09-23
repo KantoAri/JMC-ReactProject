@@ -64,3 +64,33 @@
     margin-left: 2rem !important;
   }
 }
+
+.btn-animated2 {
+  width: 20rem;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 0.8rem 1.2rem;
+}
+
+.btn-animated2:hover {
+  background-color: rgba(240, 203, 149, 0.623) !important;
+  transform: scale(1.05);
+  animation: bounceHover 1s ease;
+  border: 1.9px solid #fa9805ff !important;
+  color: rgb(175, 131, 35) !important;
+}
+
+@keyframes bounceHover {
+  0% {
+    transform: scale(1.15);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1.15);
+  }
+}

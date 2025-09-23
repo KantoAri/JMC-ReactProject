@@ -7,7 +7,7 @@ import {
   FaLaptopHouse,
 } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
-import { BsMenuButtonWide } from "react-icons/bs";
+import { FaServer } from "react-icons/fa";
 import "./MentionLegales.css";
 
 const MentionLegales = () => {
@@ -116,7 +116,7 @@ const MentionLegales = () => {
 
               <div className="mb-4 d-flex flex-md-row flex-column text-center text-md-start info-row">
                 <div className="me-md-3 mb-3 mb-md-0 d-flex justify-content-center icon">
-                  <BsMenuButtonWide color="#ff8c00" size={iconSize} />
+                  <FaServer color="#ff8c00" size={iconSize} />
                 </div>
                 <div>
                   <strong className="text-secondary info-text">
