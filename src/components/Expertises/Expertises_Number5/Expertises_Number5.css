@@ -1,0 +1,163 @@
+/* SECTION GLOBALE */
+.cms-section {
+  background-color: rgb(28, 38, 51); /* bleu nuit */
+  padding: 80px 20px;
+  color: #ffffff;
+  font-family: "Roboto", "Segoe UI", Arial, sans-serif;
+}
+
+/* Conteneur max largeur */
+.cms-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Bloc entête CMS (icône + texte) */
+.php-block--blue {
+  display: grid;
+  grid-template-columns: 160px 1fr; /* icône fixe, texte fluide */
+  gap: 24px;
+  align-items: start;
+  margin-bottom: 30px;
+  border: 2px solid rgb(112, 112, 112); /* bordure grise (respect du code fourni) */
+  border-radius: 12px;
+  padding: 20px;
+  background: transparent;
+}
+
+.php-icon {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.php-icon img {
+  width: 160px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.php-text {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Titres et paragraphes */
+.para-blue {
+  font-size: 1.4rem;
+  color: rgb(134, 130, 130);
+  margin: 0;
+}
+
+.para-dark {
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.7;
+}
+
+/* Liste des services */
+.cms-container-list {
+  max-width: 1160px; /* aligné avec le bloc CMS */
+  margin: 0 auto;
+}
+
+.cms-intro-list {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 350;
+  margin: 24px 0 16px 0;
+  color: #ffffff;
+}
+
+.cms-services-list {
+  font-family: "Roboto", sans-serif;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.cms-services-list li {
+  color: #e0e0e0;
+  font-size: 1rem;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 26px; /* espace pour la coche */
+}
+
+.cms-services-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  color: #ff6600;
+  font-weight: 700;
+}
+
+.cms-services-list li strong {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* Sous-ligne (remplace les &nbsp;) */
+.cms-li-sub {
+  display: block;
+  color: #cfd6df;
+  margin-top: 4px;
+}
+
+/* Note finale */
+.cms-note {
+  margin-top: 24px;
+  color: #e6edf5;
+  line-height: 1.7;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .php-block--blue {
+    grid-template-columns: 120px 1fr;
+  }
+
+  .php-icon img {
+    width: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cms-section {
+    padding: 60px 16px;
+  }
+
+  .php-block--blue {
+    grid-template-columns: 1fr; /* empilement mobile */
+  }
+
+  .php-icon {
+    justify-content: flex-start; /* icône alignée à gauche en mobile */
+  }
+
+  .para-blue {
+    font-size: 1.2rem;
+  }
+
+  .cms-intro-list {
+    font-size: 1.1rem;
+  }
+
+  .cms-services-list li {
+    font-size: 0.98rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .cms-container,
+  .cms-container-list {
+    max-width: 1200px;
+  }
+}

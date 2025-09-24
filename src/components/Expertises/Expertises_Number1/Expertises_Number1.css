@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 /* Section principale */
 .expertises-section {
   position: relative; /* référence pour l’overlay */
@@ -36,6 +34,7 @@
   top: 3rem;
 }
 
+/* Titre */
 .expertises-title {
   font-family: "Roboto", sans-serif;
   font-size: 4rem;
@@ -120,4 +119,3 @@
     text-align: center;
   }
 }
->>>>>>> 9ca8780 (fix: adjust page layouts)

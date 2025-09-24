@@ -1,4 +1,3 @@
-import backgroundImg from "../../assets/mention-legale-1024x682.webp";
 import { useState, useEffect } from "react";
 import {
   FaPhoneSquareAlt,

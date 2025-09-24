@@ -42,8 +42,6 @@ const HeroSection = () => {
                   className="fw-bold position-relative text-white"
                   style={{
                     paddingBottom: "20px",
-                    marginTop: "50px",
-                    fontSize: "5rem",
                     fontSize: "clamp(3.2rem, 8vw, 5rem)",
                     marginTop: "clamp(20px, 5vw, 50px)",
                   }}
@@ -54,7 +52,6 @@ const HeroSection = () => {
                       position: "absolute",
                       bottom: 0,
                       left: 0,
-                      width: "8rem",
                       height: "5px",
                       backgroundColor: "#ffffffff",
                       width: "clamp(4rem, 20vw, 8rem)",

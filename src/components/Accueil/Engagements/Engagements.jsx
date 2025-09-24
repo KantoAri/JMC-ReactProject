@@ -5,7 +5,6 @@ import {
   FaCog,
   FaExchangeAlt,
   FaCheckSquare,
-  FaCut,
   FaUserShield,
 } from "react-icons/fa";
 import { PiWavesBold } from "react-icons/pi";

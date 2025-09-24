@@ -1,54 +1,75 @@
 import React from 'react';
+import './Expertises_Number3.css';
+import appli from '../../../assets/exp3-removebg-preview.png';
+import image_mobile from '../../../assets/phone_exp3-removebg-preview1.png';
+import gestion from '../../../assets/gestion_exp3-removebg-preview.png';
+import interaction from '../../../assets/interaction_exp3-removebg-preview.png';
+import hexagone from '../../../assets/hexagone_exp3-removebg-preview.png';
 
 const ExpertisesNumber3 = () => {
   return (
     <section className="windev-dimensions-section">
-      <div className="windev-dimensions-container">
+      <div className="windev-dimensions-container container">
         {/* Titre principal */}
-        <h3 className="windev-title">Une Application, Trois Dimensions</h3>
+        <h3 className="windev-title">
+          <img src={appli} alt="Icône Windev" className="windev-icon" />
+          Une Application, Trois Dimensions
+        </h3>
+
         <p className="windev-intro">
           Un des avantages majeurs de Windev est sa capacité à combiner trois dimensions dans une même application :
         </p>
 
-        {/* Bloc des trois dimensions */}
-        <div className="windev-dimensions-grid">
-          <div className="dimension-card mobile-dimension">
-            {/* Icône ou image mobile */}
-            <div className="dimension-icon">{/* 📱 */}</div>
-            <h4>WinDev Mobile pour la Mobilité</h4>
-            <p>
-              Vos commerciaux et vos ouvriers de <br /> production peuvent accéder aux données <br /> essentielles ou qu'ils se trouvent.
-            </p>
+        {/* Trois dimensions */}
+        <div className="row windev-dimensions-grid">
+          <div className="col-md-4 col-12 mb-4">
+            <div className="dimension-card mobile-dimension">
+              <img src={image_mobile} alt="Mobile" className="dimension-icon" />
+              <h4>WinDev Mobile pour la Mobilité</h4>
+              <p>
+                Vos commerciaux et vos ouvriers de production peuvent accéder aux données essentielles où qu'ils se trouvent.
+              </p>
+            </div>
           </div>
 
-          <div className="dimension-card gestion-dimension">
-            {/* Icône ou image desktop */}
-            <div className="dimension-icon">{/* 🖥️ */}</div>
-            <h4>WinDev pour la Gestion</h4>
-            <p>
-              Nous développons des solutions de gestion pour votre entreprise.
-            </p>
+          <div className="col-md-4 col-12 mb-4">
+            <div className="dimension-card gestion-dimension">
+              <img src={gestion} alt="Gestion" className="dimension-icon" />
+              <h4>WinDev pour la Gestion</h4>
+              <p>
+                Nous développons des solutions de gestion pour votre entreprise.
+              </p>
+            </div>
           </div>
 
-          <div className="dimension-card web-dimension">
-            {/* Icône ou image web */}
-            <div className="dimension-icon">{/* 🌐 */}</div>
-            <h4>WebDev pour l’Interaction avec Vos Clients</h4>
-            <p>
-              Offrez une expérience web dynamique à <br /> vos utilisateurs.
-            </p>
+          <div className="col-md-4 col-12 mb-4">
+            <div className="dimension-card web-dimension">
+              <img src={interaction} alt="Interaction Web" className="dimension-icon" />
+              <h4>WebDev pour l’Interaction avec Vos Clients</h4>
+              <p>
+                Offrez une expérience web dynamique à vos utilisateurs.
+              </p>
+            </div>
           </div>
         </div>
 
-        {/* Bloc innovation */}
+        {/* Innovation */}
         <div className="windev-innovation">
-          <h4>Toujours à la Pointe de l’Innovation</h4>
-          <p>
-            Nous restons constamment à l’affût des nouvelles versions de Windev. Chaque année, nous participons au Tour
-            de <br /> France de PCSoft et adoptons les dernières fonctionalités dès leur disponiblité.
-          </p>
-          {/* Icône hexagonale ici */}
-          <div className="innovation-icon">{/* 🔄 */}</div>
+          <div className="row innovation-layout">
+            <div className="col-lg-8 col-12 innovation-text-block">
+              <h4 className="innovation-title">Toujours à la Pointe de l’Innovation</h4>
+              <p className="innovation-text">
+                Nous restons constamment à l’affût des nouvelles versions de Windev. Chaque année, nous participons au Tour de France de PCSoft et adoptons les dernières fonctionnalités dès leur disponibilité.
+              </p>
+            </div>
+            <div className="col-lg-4 col-12 innovation-icon-block">
+              <img
+                src={hexagone}
+                alt="Icône Innovation Hexagone"
+                className="innovation-icon-right"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
