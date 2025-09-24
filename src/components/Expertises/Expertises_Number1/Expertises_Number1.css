@@ -1,0 +1,123 @@
+<<<<<<< HEAD
+=======
+/* Section principale */
+.expertises-section {
+  position: relative; /* référence pour l’overlay */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Overlay qui recouvre toute la section */
+.expertises-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 119, 146, 0.45);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Contenu au-dessus de l’overlay */
+.expertises-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  top: 3rem;
+}
+
+.expertises-title {
+  font-family: "Roboto", sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 40px;
+  padding-bottom: 10px;
+}
+
+.exp-highlight {
+  border-bottom: 4px solid #ff6600;
+  padding-bottom: 5px;
+  display: inline-block;
+  color: white;
+}
+
+.expertises-title .exp-highlight {
+  color: white !important;
+  border-bottom: 4px solid #ff6600;
+}
+
+.expertises-description {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: white;
+  margin-bottom: 40px;
+}
+
+.expertises-description strong {
+  color: white;
+  font-weight: 600;
+}
+
+/* Bouton */
+.expertises-button-container {
+  font-family: "Roboto", sans-serif;
+}
+
+.expertises-button {
+  background-color: #f38033;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 14px 28px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.expertises-button:hover {
+  background-color: transparent;
+  border: 2px solid #ff6600;
+  transform: scale(1.05);
+  color: white;
+  font-size: 1.2rem;
+}
+
+.expertises-button i {
+  font-size: 1.2rem;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .expertises-title {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .expertises-description {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .expertises-button-container {
+    text-align: center;
+  }
+}
+>>>>>>> 9ca8780 (fix: adjust page layouts)
