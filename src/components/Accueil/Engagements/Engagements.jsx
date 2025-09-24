@@ -71,7 +71,7 @@ const Engagements = () => {
           parcours et de notre engagement envers l'excellence. Nous sommes
           déterminés à continuer à fournir à nos clients des services de haute
           qualité, en restant à l'écoute de leurs besoins et en nous adaptant
-          aux evolutions du marché.
+          aux évolutions du marché.
         </p>
       </div>
       <Container className="my-5">
