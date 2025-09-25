@@ -36,7 +36,7 @@ const AboutUs = () => {
           className="row"
           style={{ margin: window.innerWidth >= 992 ? "0 5rem" : "0" }}
         >
-          <div className="col-lg-20 col-12 mb-4">
+          <div className="col-lg-12 col-12 mb-4">
             <h2 className="titleh2 text-left mb-4 position-relative">
               Qui sommes-nous ?
               <span

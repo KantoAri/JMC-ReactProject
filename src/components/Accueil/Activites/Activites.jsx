@@ -182,7 +182,7 @@ const Activites = () => {
                   fontSize: "2rem",
                 }}
               >
-                <FaCubes className="me-2" />2 - Valeurs
+                <FaCubes className="me-2" /> 2 - Valeurs
               </h3>
               <p
                 className="text-light"
