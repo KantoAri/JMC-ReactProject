@@ -1,0 +1,89 @@
+.pcsoft-section {
+  background-color: white;
+  padding: 80px 20px;
+  font-family: "Roboto", sans-serif;
+}
+
+.pcsoft-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 60px;
+  color: black !important;
+  text-align: center;
+}
+
+.exp-highlight {
+  display: inline-block;
+  border-bottom: 4px solid #ff6600;
+  font-weight: 700;
+  line-height: 1.2;
+  padding-bottom: 2px;
+  color: black;
+}
+.pcsoft-title .exp-highlight {
+  color: black !important;
+  border-bottom: 4px solid #ff6600;
+}
+
+.pcsoft-wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.pcsoft-image-container {
+  text-align: center;
+}
+
+.pcsoft-image {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.pcsoft-text-container {
+  padding-top: 20px;
+  color: #1e1e1e;
+}
+
+.pcsoft-subtitle {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 30px;
+  color: rgb(0, 178, 236);
+}
+
+.pcsoft-description p {
+  font-family: "Roboto", sans-serif;
+  text-align: justify;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.pcsoft-description strong {
+  font-weight: 600;
+  color: #000;
+}
+
+/* Responsive */
+@media (min-width: 992px) {
+  .pcsoft-text-container {
+    padding-left: 40px;
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .pcsoft-title {
+    font-size: 2rem;
+  }
+
+  .pcsoft-subtitle {
+    text-align: center;
+  }
+
+  .pcsoft-description p {
+    font-size: 1rem;
+  }
+}

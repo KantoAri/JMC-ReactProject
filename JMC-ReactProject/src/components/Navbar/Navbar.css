@@ -1,0 +1,72 @@
+
+@media (max-width: 991.98px) {
+  .sidebar-menu {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100vh;
+    background-color: #a3b0b1ff;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 80px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .sidebar-menu.expanded {
+    right: 0;
+    opacity: 1;
+    visibility: visible;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-nav {
+    width: 100%;
+  }
+  .nav-item {
+    margin: 10px 0;
+    transform: translateX(20px);
+    opacity: 0;
+    transition: all 0.3s ease;
+    transition-delay: 0.1s;
+  }
+
+  .sidebar-menu.expanded .nav-item {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  .sidebar-menu.expanded .nav-item:nth-child(2) {
+    transition-delay: 0.15s;
+  }
+
+  .sidebar-menu.expanded .nav-item:nth-child(3) {
+    transition-delay: 0.2s;
+  }
+
+  .sidebar-menu.expanded .nav-item:nth-child(4) {
+    transition-delay: 0.25s;
+  }
+
+  .btn-close {
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+  }
+
+  .btn-close:hover {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 992px) {
+  .sidebar-menu {
+    display: flex !important;
+  }
+}

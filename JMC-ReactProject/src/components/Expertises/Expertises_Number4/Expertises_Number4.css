@@ -1,0 +1,202 @@
+/* Section + conteneur */
+.php-section {
+  background-color: #1c2633; /* bleu nuit */
+  padding: 80px 20px;
+  font-family: "Roboto", sans-serif;
+  color: #ffffff;
+}
+
+.php-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Titre */
+.php-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #fff;
+}
+
+.exp-highlight {
+  border-bottom: 4px solid #ffffff;
+  padding-bottom: 5px;
+  display: inline-block;
+  color: #ffffff;
+}
+
+/* Pair blocks (ligne à deux colonnes avec bordures colorées) */
+.pair-block {
+
+  display: grid;
+  grid-template-columns: 160px 1fr; /* icône fixe, texte fluide */
+  gap: 24px;
+  align-items: start;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  padding: 20px;
+  background: transparent;
+  margin-bottom: 32px;
+}
+
+.pair-block--blue {
+  border-color: rgb(0, 178, 236);
+}
+
+.pair-block--orange {
+  border-color: rgb(247, 121, 3);
+}
+
+/* Inversion (texte à gauche, icône à droite) */
+.pair-block--reverse {
+  grid-template-columns: 1fr 160px;
+}
+
+/* Colonnes internes */
+.pair-block__icon {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.pair-block__icon img {
+  width: 160px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.pair-block__text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Titres et paragraphes */
+.pair-block__heading {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.pair-block__heading--blue {
+  color: rgb(0, 178, 236);
+}
+
+.pair-block__para {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  line-height: 1.7;
+  color: #e8eef5;
+}
+
+/* Encadré de la question */
+.question-box {
+  
+  color: rgb(247, 121, 3);
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  padding: 16px 18px;
+  border-radius: 10px;
+  background: #1c2633;
+}
+
+/* Intro avantages — rétablie */
+.php-benefits-wrapper {
+  margin: 40px 0 20px 0;
+  text-align: center;
+}
+
+.php-benefits-intro {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* Grille des avantages */
+.php-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 colonnes desktop par défaut */
+  gap: 24px;
+}
+
+.benefit-card {
+  background-color: rgba(180, 178, 178, 0.75); /* gris des cartes */
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  text-align: center;
+  border-bottom: 1px solid #ffffff; /* soulignement blanc en bas */
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.benefit-card h5 {
+  margin: 0 0 10px 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.benefit-card p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+}
+
+/* Responsive */
+@media (min-width: 1200px) {
+  /* 3 colonnes sur très grand écran si tu veux */
+  .php-benefits-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 992px) {
+  .pair-block,
+  .pair-block--reverse {
+    grid-template-columns: 120px 1fr;
+  }
+
+  .pair-block--reverse {
+    grid-template-columns: 1fr 120px;
+  }
+
+  .pair-block__icon img {
+    width: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .php-title {
+    font-size: 2.2rem;
+  }
+
+  .pair-block,
+  .pair-block--reverse {
+    grid-template-columns: 1fr;       /* empilement */
+    text-align: left;
+  }
+
+  .pair-block__icon {
+    justify-content: flex-start;      /* icône alignée à gauche quand empilé */
+  }
+
+  .question-box {
+    text-align: left;
+  }
+
+  .php-benefits-grid {
+    grid-template-columns: 1fr;       /* 1 colonne mobile */
+  }
+}
