@@ -10,7 +10,6 @@
   align-items: center;
   padding: 0;
   overflow: hidden;
-  
 }
 
 /* Overlay qui recouvre toute la section */
@@ -32,6 +31,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 60px 20px;
+  top: 3rem;
 }
 
 /* Titre */
@@ -56,7 +56,6 @@
   border-bottom: 4px solid #ff6600;
 }
 
-/* Description */
 .expertises-description {
   font-family: "Roboto", sans-serif;
   font-size: 1.1rem;

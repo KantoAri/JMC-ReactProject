@@ -1,6 +1,5 @@
 
 import styles from "./Mini_projet.module.css";
-import React, { useState } from "react";
 
 const items = [
   {
