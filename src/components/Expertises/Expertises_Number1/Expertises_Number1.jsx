@@ -8,7 +8,7 @@ const ExpertisesNumber1 = () => {
   return (
     <section
       className="expertises-section"
-      style={{ backgroundImage: `url(${fond_expertise})` }}
+      style={{ backgroundImage: `url(${fond_expertise})`  }}
     >
       <div className="expertises-overlay"></div>
       <div className="expertises-container">
