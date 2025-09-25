@@ -21,7 +21,7 @@ const Navbar = () => {
     };
 
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 992); 
+      setIsMobile(window.innerWidth < 992);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -35,10 +35,8 @@ const Navbar = () => {
     };
   }, []);
 
-  // Determine navbar position style based on screen size
   const navbarPositionStyle = isMobile ? "fixed" : "absolute";
 
-  // Determine navbar background color based on screen size and scroll position
   const navbarBackgroundColor = isMobile && scrolled ? "#c6eef3" : "#c6eef365";
 
   return (
@@ -79,7 +77,6 @@ const Navbar = () => {
           }`}
           id="navbarNav"
         >
-          {/* Close button for mobile sidebar */}
           <button
             className="btn-close d-lg-none position-absolute top-0 end-0 mt-3 me-3"
             onClick={handleNavCollapse}

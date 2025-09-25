@@ -32,7 +32,7 @@ const HeroSection = () => {
               className="col-lg-6 col-md-8 col-12 text-left p-md-4 p-3 rounded text-white"
               style={{
                 marginLeft: "4rem",
-                "@media (max-width: 768px)": {
+                "@media (maxWidth: 768px)": {
                   marginLeft: "0",
                 },
               }}
