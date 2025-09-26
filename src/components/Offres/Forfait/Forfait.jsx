@@ -51,7 +51,7 @@ const Forfait = () => {
                     <span className={styles.forfaitPlusIcon}>+</span>
                   </button>
                   {openIndex === idx && (
-                    <div>
+                    <div className={styles.forfaitDescriptionBox}>
                       {Array.isArray(item.description) ? (
                         item.description.map((desc, i) => <p key={i}>{desc}</p>)
                       ) : typeof item.description === 'object' && item.description !== null ? (

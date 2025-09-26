@@ -27,7 +27,7 @@ const items = [
   },
   {
     title: "Essayez la régie sans aucun risque",
-    description: "Vous démarrez par une \"période d’essai\" de 2 mois</strong> pendant lesquels vous pouvez arrêter à tout moment, sans préavis. Si vous Arrêtez en cours de mois, vous n’êtes pas facturé (Vous ne payez que les mois terminés)."
+    description: "Vous démarrez par une \"période d’essai\" de 2 mois pendant lesquels vous pouvez arrêter à tout moment, sans préavis. Si vous Arrêtez en cours de mois, vous n’êtes pas facturé (Vous ne payez que les mois terminés)."
   },
   {
     title: "Pourquoi choisir JM-Contacts ?",
@@ -66,7 +66,7 @@ const Regie = () => {
                 <span className={styles.regiePlusIcon}>+</span>
               </button>
               {openIndex === idx && (
-                <div>
+                <div className={styles.regieDescriptionBox}>
                   {Array.isArray(item.description) ? (
                     <ul>
                       {item.description.map((el, i) => (

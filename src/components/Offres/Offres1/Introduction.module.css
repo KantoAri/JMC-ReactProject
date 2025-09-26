@@ -38,8 +38,56 @@
   flex-direction: column;
   gap: 0.5rem;
   min-height: 320px;
-  justify-content: center;
-  padding: 2.5rem 0;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 0;
+  padding-bottom: 2.5rem;
+  background: url('https://jm-contacts.net/wp-content/uploads/2024/04/services-offres-1-scaled.webp') center/cover no-repeat;
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  box-sizing: border-box;
+}
+
+.introductionContent {
+  max-width: 700px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+.introductionContent h1,
+.introductionContent p,
+.introductionContent a {
+  text-align: left;
+  align-self: flex-start;
+}
+
+.introductionFlex h1,
+.introductionFlex p,
+.introductionFlex a {
+  text-align: left;
+  align-self: flex-start;
+}
+
+.introductionFlex > * {
+  position: relative;
+  z-index: 2;
+}
+
+.introductionFlex::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(124, 172, 243, 0.82);
+  z-index: 1;
 }
 
 .introductionFlex h1 {
