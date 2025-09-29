@@ -5,3 +5,10 @@
     padding: 50px;
     
 }
+.table-responsive{
+    margin: 10%;
+}
+table thead .thead-dark{
+    background-color: #33a56c ;
+    color: #0000ff;
+}

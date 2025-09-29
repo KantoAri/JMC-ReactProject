@@ -4,6 +4,7 @@ import Homepage from "../pages/Homepage";
 import Expertises from "../pages/Expertises";
 import OffresDeServices from "../pages/OffresDeServices";
 import Contact from "../pages/Contact";
+import ContactList from "../pages/ContactList";
 import MentionLegalesPage from "../pages/MentionLegalesPage";
 
 const MainRoute = () => {
@@ -17,6 +18,7 @@ const MainRoute = () => {
             <Route path="/offres-de-services" element={<OffresDeServices />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/mentions-legales" element={<MentionLegalesPage />} />
+             <Route path="/listContact" element={<ContactList />} />
           </Route>
         </Routes>
       </Router>
