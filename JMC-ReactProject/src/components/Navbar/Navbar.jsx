@@ -134,6 +134,16 @@ const Navbar = () => {
                 <strong>LISTE CONTACTS</strong>
               </Link>
             </li>
+            <li className="nav-item mx-md-2">
+              <Link
+                className="nav-link"
+                to="/admin"
+                style={{ color: "black" }}
+                onClick={handleNavCollapse}
+              >
+                <strong>Connexion</strong>
+              </Link>
+            </li>
           </ul>
           <div className="text-center mt-3 mt-lg-0">
             <a
