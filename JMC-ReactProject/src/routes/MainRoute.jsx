@@ -5,7 +5,9 @@ import Expertises from "../pages/Expertises";
 import OffresDeServices from "../pages/OffresDeServices";
 import Contact from "../pages/Contact";
 import ContactList from "../pages/ContactList";
+import Connexion from "../pages/Connexion";
 import MentionLegalesPage from "../pages/MentionLegalesPage";
+import Update from "../components/Contact/updateuser/Update"
 
 const MainRoute = () => {
   return (
@@ -19,6 +21,8 @@ const MainRoute = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/mentions-legales" element={<MentionLegalesPage />} />
              <Route path="/listContact" element={<ContactList />} />
+             <Route path="/admin" element={<Connexion />} />
+             <Route path="/update/:id" element={<Update />} />
           </Route>
         </Routes>
       </Router>

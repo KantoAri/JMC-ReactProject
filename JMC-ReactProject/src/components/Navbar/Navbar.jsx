@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import logoImg from "../../assets/logoreact.png";
 import linkedin from "../../assets/linkedin.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -10,7 +10,7 @@ const Navbar = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
-
+const navigate = useNavigate();
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -141,7 +141,7 @@ const Navbar = () => {
                 style={{ color: "black" }}
                 onClick={handleNavCollapse}
               >
-                <strong>Connexion</strong>
+                <strong>CONNEXION</strong>
               </Link>
             </li>
           </ul>

@@ -1,53 +1,109 @@
 import React from 'react'
+import "../components/connexion/connexion.css"
+import "../components/Contact/contact.css"
+import fond_expertise from '../assets/header-contact-scaled-1-2048x1366.webp'
+import {useState, useEffect} from "react"
+import axios from "axios";
+import { useNavigate } from 'react-router-dom';
+//import HeroSection from "../components/Accueil/HeroSection/HeroSection";
 
+  
 const Connexion =() =>{
+    const navigate = useNavigate();
+  const[name,setName] =useState();
+  const[mdp,setMdp] =useState();
+    const users ={
+        name:"admin",
+        mdp:"123",
+        telephone:"00000",
+        email:"admin@gmail.com"
+       
+    };
+    const[user,setUser] = useState(users);
+    //const navigate = useNavigate();
+
+    const inputHandler = (e)=>{
+        const {name,value} = e.target;
+        
+        console.log(name,value);
+       
+        switch(name) {
+          
+          case "mdp":
+            setMdp(value);
+            setUser({ ...user, [name]: value });
+            break;
+          case "name":
+            setName(value);
+            setUser({ ...user, [name]: value });
+            break;
+           
+          default:
+            setUser({ ...user, [name]: value });
+        }        
+    };
+
+    const submitForm = async(e)=>{
+        e.preventDefault();
+        await axios.post("http://localhost:8000/api/login",user)
+        .then((response)=>{
+           // console.log("User created successfull");
+            navigate("/listContact");
+        })
+        .catch((error)=>{
+            const tagmsg =  document.getElementById("tagMessage");
+           tagmsg.style.display="block";
+           tagmsg.innerText ="Login ou mot de passe invalide";
+        })
+    };
+
+    const createDefaultUser = async(e)=>{
+        e.preventDefault();
+        await axios.post("http://localhost:8000/api/user/default",user)
+        .then((response)=>{
+            console.log(" DEFAULT User created successfull");
+            //navigate("/listContact");
+        })
+        .catch((error)=>{
+            console.log("erreur lor de création d'utilisateur par défaut")
+        //     const tagmsg =  document.getElementById("tagMessage");
+        //    tagmsg.style.display="block";
+        //    tagmsg.innerText ="Login ou mot de passe invalide";
+        })
+    };
   return (
-    <div>
-      <section class="vh-100 gradient-custom">
-        <div class="container py-5 h-100">
-            <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                <div class="card bg-dark text-white" style="border-radius: 1rem;">
-                <div class="card-body p-5 text-center">
-
-                    <div class="mb-md-5 mt-md-4 pb-5">
-
-                    <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
-                    <p class="text-white-50 mb-5">Please enter your login and password!</p>
-
-                    <div data-mdb-input-init class="form-outline form-white mb-4">
-                        <input type="email" id="typeEmailX" class="form-control form-control-lg" />
-                        <label class="form-label" for="typeEmailX">Email</label>
-                    </div>
-
-                    <div data-mdb-input-init class="form-outline form-white mb-4">
-                        <input type="password" id="typePasswordX" class="form-control form-control-lg" />
-                        <label class="form-label" for="typePasswordX">Password</label>
-                    </div>
-
-                    <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
-
-                    <button data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
-
-                    <div class="d-flex justify-content-center text-center mt-4 pt-1">
-                        <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
-                        <a href="#!" class="text-white"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
-                        <a href="#!" class="text-white"><i class="fab fa-google fa-lg"></i></a>
-                    </div>
-
-                    </div>
-
-                    <div>
-                    <p class="mb-0">Don't have an account? <a href="#!" class="text-white-50 fw-bold">Sign Up</a>
-                    </p>
-                    </div>
-
+    <div onLoad={createDefaultUser}>
+        <div className='formCOnnex'>
+            <section   style={{ margin: " auto auto", maxWidth:500}}>
+            
+              <form onSubmit={submitForm} >
+                <div className="form-group" style={{fontSize:"40px", textAlign:"center"}}>
+                    <label style={{fontSize:"40px", textAlign:"center"}}>AUTHENTIFICATION</label>
+                    
+                    
                 </div>
+                <div className="form-group">
+                    <label htmlFor="name">Login</label>
+                    <input type="text" className="form-control" 
+                    onChange={inputHandler}
+                    required id="name" name="name" aria-describedby="emailHelp" />
+                    
                 </div>
-            </div>
-            </div>
+                <div className="form-group">
+                    <label htmlFor="mdp">Mot de passe</label>
+                    <input type="password" className="form-control" 
+                    onChange={inputHandler}
+                    required id="mdp" name="mdp" aria-describedby="emailHelp" />
+                </div>
+               
+                <button type="submit" 
+                style={{margin:"5px"}}
+                className="btn btn-primary">Connexion</button>
+                <span id='tagMessage' style={{display:"none", color:"red"}}>ttooo</span>
+            </form>
+          </section>
         </div>
-        </section>
+      
     </div>
   )
 }

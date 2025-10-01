@@ -43,6 +43,8 @@ const deleteUser = async(userId) =>{
                     <th scope="col" style={{backgroundColor:"gray"}}>S.N°</th>
                     <th scope="col" style={{backgroundColor:"gray"}}>Nom</th>
                     <th scope="col" style={{backgroundColor:"gray"}}>Email</th>
+                    <th scope="col" style={{backgroundColor:"gray"}}>Téléphone</th>
+                    <th scope="col" style={{backgroundColor:"gray"}}>Mot de passe</th>
                     <th scope="col" style={{backgroundColor:"gray"}}>Abonné à newsletter</th>
                     <th scope="col" style={{backgroundColor:"gray"}}>Actions</th>
                 </tr>
@@ -63,11 +65,16 @@ const deleteUser = async(userId) =>{
                       <td>{index+1}</td>
                       <td>{user.name}</td>
                       <td>{user.email}</td>
-
+                      <td>{user.telephone}</td>
+                      <td>{user.mdp}</td>
                       <td style={{color:"green"}}>{abn}</td>
                       <td>
-                        
-                        <button onClick={()=>deleteUser(user._id)} type="button" className="btn btn-danger">
+                        <Link to={`/update/`+user._id} type="button" className="btn btn-success">
+                          <i class="fa-solid fa-pencil"></i>
+                        </Link>
+                        <button onClick={()=>deleteUser(user._id)}
+                        style={{margin:"2px"}}
+                         type="button" className="btn btn-danger">
                           <i className="fa-solid fa-trash"></i>
                         </button>
                       </td>

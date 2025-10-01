@@ -3,6 +3,7 @@
     margin: 5px 100px 5px 5px;
    
     padding: 50px;
+    overflow: hidden;
     
 } 
 .table-responsive{
@@ -15,7 +16,7 @@
   background-position: center;
   background-repeat: no-repeat;
   min-height: 100vh;
-   min-width: 600px;
+   
   display: flex;
   align-items: center;
   padding: 0;
@@ -40,14 +41,14 @@
 
 
 .lines {
-    border: 2px solid red;
+    
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   height: 100%;
   margin: auto;
-  
+  overflow: hidden;
   z-index: 2;
   display: flex;
   justify-content: space-between; /* Distribute lines evenly */

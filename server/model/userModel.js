@@ -18,6 +18,10 @@ const userSchema = new mongoose.Schema(
             type: Boolean,
             required: false
         },
+        mdp:{
+            type: String,
+            required: false
+        },
     }
 )
 export default mongoose.model("Users",userSchema)

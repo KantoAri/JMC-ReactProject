@@ -1,6 +1,8 @@
 //import { json } from "body-parser";
 import User from "../model/userModel.js";
 
+
+
 export const create = async(req,res)=>{
     try{
             const newUser = new User(req.body);
@@ -8,6 +10,24 @@ export const create = async(req,res)=>{
 
             const userExist = await User.findOne({email})
             if(userExist)
+            {
+                return res.status(400).json({message : "User already exist"});
+            }
+            const savedData = await newUser.save();
+            res.status(200).json(savedData)
+    }
+    catch(error)
+    {
+        res.status(500).json({errorMessage:error.message})
+    }
+};
+export const createDefault = async(req,res)=>{
+    try{
+        const newUser = new User(req.body);
+            const {name} = newUser;
+
+            const userExist = await User.findOne({name})
+            if(userExist && userExist.mdp === "123")
             {
                 return res.status(400).json({message : "User already exist"});
             }
@@ -80,6 +100,44 @@ export const deleteUser = async(req,res) =>{
 
         const updateData = await User.findByIdAndDelete(id)
         res.status(200).json({message : "User deleted successfully."})
+    }
+    catch(error)
+    {
+        res.status(500).json({errorMessage: error.message});
+    }
+}
+export const Authetification = async(req, res)=>{
+    const {name,mdp} =req.body;
+    try{
+       
+         const newUser = new User(req.body);
+         
+        const {name} = newUser;
+        const userExist  = await User.findOne({name})
+        if(name === "admin" && mdp ==="123")
+        {
+            
+                    if(!(userExist && userExist.mdp === "123"))
+                    {
+                        //return res.status(400).json({message : "User already exist"});
+                    
+                        const savedData = await newUser.save();
+                    }
+                    
+                   // res.status(200).json(savedData)
+        }
+                    
+
+        const userlogin = await User.findOne({name});
+        if(userlogin && userlogin.mdp === mdp)
+        {
+             res.status(200).json(userlogin);
+        }
+       else
+       {
+        res.status(400);
+        throw new Error ("Login ou mot de passe invalide")
+       }
     }
     catch(error)
     {
