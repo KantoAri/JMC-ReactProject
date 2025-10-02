@@ -74,11 +74,13 @@ const deleteUser = async(userId) =>{
                       <td style={{color:"yellow"}}>{isExterne}</td>
                       <td style={{color:"green"}}>{abn}</td>
                       <td>
-                        <Link to={`/update/`+user._id} type="button" className="btn btn-success">
+                        <Link to={`/update/`+user._id} type="button"
+                        style={{margin:"2px", padding:"3px"}}
+                        className="btn btn-success">
                           <i class="fa-solid fa-pencil"></i>
                         </Link>
                         <button onClick={()=>deleteUser(user._id)}
-                        style={{margin:"2px"}}
+                        style={{margin:"2px", padding:"3px"}}
                          type="button" className="btn btn-danger">
                           <i className="fa-solid fa-trash"></i>
                         </button>

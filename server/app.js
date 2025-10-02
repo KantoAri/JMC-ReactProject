@@ -18,9 +18,42 @@ app.use((req,res,next) => {
 });
 
 function sendEmail({email,subject,message,name,telephone}){
-    //// host: 'smtp.gmail.com',
-           //service: "gmail",
-            // port: 587,
+    
+   
+        // var transpoter = nodemailer.createTransport({           
+        //     //service:"gmail",
+        //       host: 'smtp.gmail.com',
+        //  //  service: "gmail",
+        //      port: 587,
+        //      secure: false,             
+        //     auth: {
+        //          user: "berfaceb@gmail.com",
+        //         pass: "kykd pjkl cffn yhwj",
+        //     },
+        // });
+        // // user: "bertrandsteev@gmail.com",
+        // const mail_configs ={
+        //     from: email,
+        //     to: "berfaceb@gmail.com",
+        //     subject: subject,
+        //    // text: message, 
+        //     html: `<div>
+            
+        //     <p>${message}</p>
+        //         <br>
+        //         <p></p>
+        //         <p> Nom : <strong>${name}</strong></p>
+        //         <p>Email : <strong>${email}</strong> </p>
+        //         <p>Tél : <strong>${telephone}</strong> </p>
+        //     </div>
+        //     `,
+        // };
+        // (async()=>{
+        //      transpoter.sendMail(mail_configs);
+    
+        // })();
+       
+
             // secure: false,
     return new Promise((resolve,reject)=> {
         var transpoter = nodemailer.createTransport({           
@@ -30,14 +63,14 @@ function sendEmail({email,subject,message,name,telephone}){
              port: 587,
              secure: false,             
             auth: {
-                 user: "bertrandsteev@gmail.com",
-                pass: "zefl ipjx goty nbze"
+                 user: "berfaceb@gmail.com",
+                pass: "kykd pjkl cffn yhwj",
             },
         });
-        
+        // user: "bertrandsteev@gmail.com",
         const mail_configs ={
             from: email,
-            to: "bertrandsteev@gmail.com",
+            to: "berfaceb@gmail.com",
             subject: subject,
            // text: message, 
             html: `<div>
@@ -62,12 +95,15 @@ function sendEmail({email,subject,message,name,telephone}){
               
         });
     });
-}
+};
+
 app.get("/",(req,res) => {
     sendEmail(req.query)
-    .then((response)=>response.send(response.message))
-    .catch((error)=>res.status(500).send(error.message));
+     .then((response)=>res.status(200).send(response.message))
+     .catch((error)=>res.status(900).send(error.message));
 });
+
+//.then((response)=>response.send(response.message))
 
 app.listen(port,()=>{
     console.log(`nodemailer es listeninhg at http://localhost:${port}`);

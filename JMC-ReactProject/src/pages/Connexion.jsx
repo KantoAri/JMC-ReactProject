@@ -6,7 +6,6 @@ import {useState, useEffect} from "react"
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 //import HeroSection from "../components/Accueil/HeroSection/HeroSection";
-
   
 const Connexion =() =>{
     const navigate = useNavigate();
@@ -99,7 +98,7 @@ const Connexion =() =>{
                 <button type="submit" 
                 style={{margin:"5px"}}
                 className="btn btn-primary">Connexion</button>
-                <p id='tagMessage' style={{display:"block", color:"red",margin:"5px"}}>coucouc</p>
+                <p id='tagMessage' style={{display:"block", color:"red",margin:"5px"}}></p>
             </form>
           </section>
         </div>

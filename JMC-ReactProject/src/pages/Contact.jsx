@@ -14,7 +14,7 @@ const Contact = () => {
   
 const sendMail=()=>{
  
-  console.log(`mail reçu : ${email}`);
+  //console.log(`mail reçu : ${email}`);
 
   axios.get("http://localhost:4000/",{
     params:{
@@ -32,7 +32,10 @@ const sendMail=()=>{
            tagmsg.innerText ="Merci pour votre message. Il a été envoyé.";
     //console.log(`Success`)
   })
-  .catch(()=>{
+  .catch((error)=>{
+    const tagmsg =  document.getElementById("tagMessage");
+           tagmsg.style.display="block";
+           tagmsg.innerText =error.message;
     console.log(`Failure`)
   })
 };
@@ -50,7 +53,7 @@ const users ={
     const inputHandler = (e)=>{
         const {name,value} = e.target;
         
-        console.log(name,value);
+        //console.log(name,value);
        
         switch(name) {
           case "abonner":
@@ -189,6 +192,7 @@ const users ={
                 <label className="form-check-label" htmlFor="abonner">Abonnez-vous à notre newsletter</label>
               </div>
               <button type="submit" onClick={sendMail}  className="btn btn-primary">Envoyer</button>
+              <p id="tagMessage" style={{margin:"5px", border:"solid 2px green", padding:"3px",display:"none"}}>Merci pour votre message. Il a été envoyé</p>
             </form>
           </section>
       </div>
