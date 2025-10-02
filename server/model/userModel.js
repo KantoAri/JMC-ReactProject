@@ -21,6 +21,10 @@ const userSchema = new mongoose.Schema(
         mdp:{
             type: String,
             required: false
+        },        
+        isExterne:{
+            type: Boolean,
+            required: false
         },
     }
 )

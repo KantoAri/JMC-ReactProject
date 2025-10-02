@@ -34,9 +34,10 @@ const deleteUser = async(userId) =>{
 
   return (
     <div className="table-responsive">
-      {/* <Link to="/add" type="button" className="btn btn-primary">
-          <i class="fa-regular fa-plus"></i>
-      </Link> */}
+      <Link to="/add" type="button" style={{margin:"5px"}} className="btn btn-dark">
+         Ajouter <i class="fa-solid fa-user-plus"></i>
+          
+      </Link> 
       <table className="table table-striped table-dark">
             <thead className='thead-dark' style={{backgroundColor:"gray"}}>
                 <tr style={{backgroundColor:"gray"}}>
@@ -45,6 +46,7 @@ const deleteUser = async(userId) =>{
                     <th scope="col" style={{backgroundColor:"gray"}}>Email</th>
                     <th scope="col" style={{backgroundColor:"gray"}}>Téléphone</th>
                     <th scope="col" style={{backgroundColor:"gray"}}>Mot de passe</th>
+                    <th scope="col" style={{backgroundColor:"gray"}}>Externe</th>
                     <th scope="col" style={{backgroundColor:"gray"}}>Abonné à newsletter</th>
                     <th scope="col" style={{backgroundColor:"gray"}}>Actions</th>
                 </tr>
@@ -53,11 +55,14 @@ const deleteUser = async(userId) =>{
                 {users.map((user,index) =>
                 {
                   let abn = user.abonner;
+                  let isExterne = (user.isExterne === true ? "Oui" : "Non");
                   if(user.abonner)
                   {
                       abn= "Oui";
                   }
                   else abn= "Non";
+
+
                   return(
                     
                    
@@ -67,6 +72,8 @@ const deleteUser = async(userId) =>{
                       <td>{user.email}</td>
                       <td>{user.telephone}</td>
                       <td>{user.mdp}</td>
+                      
+                      <td style={{color:"yellow"}}>{isExterne}</td>
                       <td style={{color:"green"}}>{abn}</td>
                       <td>
                         <Link to={`/update/`+user._id} type="button" className="btn btn-success">

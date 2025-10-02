@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { Link , useNavigate,useParams } from 'react-router-dom';
 import axios from "axios";
-import "./update.css"
+import "./update.css";
 import toast from 'react-hot-toast';
 const Update =()=> {
     const users ={
         name:"",
         email:"",
-        adress:"",
+        telephone:"",
+        mdp:"",
     };
     const[user,setUser] = useState(users);
     const navigate = useNavigate();
@@ -54,7 +55,7 @@ const Update =()=> {
                     <p style={{fontSize:"40px"}}>Modification d'utilisateur</p>
                     <Link to="/listContact" type="button" class="btn btn-secondary">
                       <i class="fa-solid fa-backward"></i>
-                      Back
+                      Retour
                     </Link>
                  </div>      
               <div className="form-group">

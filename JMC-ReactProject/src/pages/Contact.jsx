@@ -39,6 +39,7 @@ const users ={
         email:"",
         telephone:"",
         abonner: false,
+        isExterne:true,
     };
     const[user,setUser] = useState(users);
     //const navigate = useNavigate();
@@ -71,22 +72,22 @@ const users ={
     };
 
     const submitForm = async(e)=>{
-      console.log(`USER name : ${user.name}`);
-      console.log(`USER mail : ${user.email}`);
-      console.log(`USER teléphone : ${user.telephone}`);
-      console.log(`USER abonner: ${user.abonner}`);
+      // console.log(`USER name : ${user.name}`);
+      // console.log(`USER mail : ${user.email}`);
+      // console.log(`USER teléphone : ${user.telephone}`);
+      // console.log(`USER abonner: ${user.abonner}`);
        
 
-       console.log(`contact name : ${name}`);
-      console.log(`contact mail : ${email}`);
-      console.log(`contact teléphone : ${telephone}`);
+      //  console.log(`contact name : ${name}`);
+      // console.log(`contact mail : ${email}`);
+      // console.log(`contact teléphone : ${telephone}`);
       
 
         e.preventDefault();
         await axios.post("http://localhost:8000/api/contact",user)
         .then((response)=>{
             console.log("User created successfully");
-            //navigate("/");
+            window.formUser.reset();
         })
         .catch((error)=>{
             console.log(error)
@@ -143,7 +144,7 @@ const users ={
           
           <section  style={{ margin: " auto auto", maxWidth:500}}>
             
-              <form onSubmit={submitForm}>
+              <form id="formUser" onSubmit={submitForm}>
               <div className="form-group">
                 <label htmlFor="name">Prénom et nom</label>
                 <input type="text" className="form-control" 
