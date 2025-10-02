@@ -100,7 +100,7 @@ function sendEmail({email,subject,message,name,telephone}){
 app.get("/",(req,res) => {
     sendEmail(req.query)
      .then((response)=>res.status(200).send(response.message))
-     .catch((error)=>res.status(900).send(error.message));
+     .catch((error)=>res.status(500).send(error.message));
 });
 
 //.then((response)=>response.send(response.message))

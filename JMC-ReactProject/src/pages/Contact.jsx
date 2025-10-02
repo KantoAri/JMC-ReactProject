@@ -3,6 +3,7 @@ import "../components/Contact/contact.css"
 import fond_expertise from '../assets/header-contact-scaled-1-2048x1366.webp'
 import {useState, useEffect} from "react"
 import axios from "axios";
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 //import HeroSection from "../components/Accueil/HeroSection/HeroSection";
 const Contact = () => {
@@ -13,9 +14,13 @@ const Contact = () => {
   const[telephone,setTelephone] =useState();
   
 const sendMail=()=>{
- 
-  //console.log(`mail reçu : ${email}`);
 
+ const tagSubmit =  document.getElementById("tagSubmit");
+           tagSubmit.style.display="none";
+
+  const tagEnvoie =  document.getElementById("tagEnvoie");
+           tagEnvoie.style.display="block";
+           
   axios.get("http://localhost:4000/",{
     params:{
       email,
@@ -27,12 +32,19 @@ const sendMail=()=>{
     
   })
   .then(()=>{
+    window.formUser.reset();
+     tagEnvoie.style.display="none";
+     toast.success("Merci pour votre message. Il a été envoyé.",{position:"top-right"});
+
+     tagSubmit.style.display="block";
     const tagmsg =  document.getElementById("tagMessage");
-           tagmsg.style.display="block";
-           tagmsg.innerText ="Merci pour votre message. Il a été envoyé.";
+           tagmsg.style.display="none";
+           //tagmsg.innerText ="Merci pour votre message. Il a été envoyé.";
     //console.log(`Success`)
   })
   .catch((error)=>{
+    tagSubmit.style.display="block";
+    tagEnvoie.style.display="none";
     const tagmsg =  document.getElementById("tagMessage");
            tagmsg.style.display="block";
            tagmsg.innerText =error.message;
@@ -78,22 +90,11 @@ const users ={
     };
 
     const submitForm = async(e)=>{
-      // console.log(`USER name : ${user.name}`);
-      // console.log(`USER mail : ${user.email}`);
-      // console.log(`USER teléphone : ${user.telephone}`);
-      // console.log(`USER abonner: ${user.abonner}`);
-       
-
-      //  console.log(`contact name : ${name}`);
-      // console.log(`contact mail : ${email}`);
-      // console.log(`contact teléphone : ${telephone}`);
-      
-
         e.preventDefault();
         await axios.post("http://localhost:8000/api/contact",user)
         .then((response)=>{
             console.log("User created successfully");
-            window.formUser.reset();
+            
         })
         .catch((error)=>{
             console.log(error)
@@ -105,17 +106,17 @@ const users ={
      
       <section className="expertises-section" style={{ backgroundImage: `url(${fond_expertise})`} }>
         <div className="expertises-overlay"></div>
-         <div class="lines">
-  <div class="line"></div>
-  <div class="line"></div>
-  <div class="line"></div>
-  <div class="line"></div>
-  <div class="line"></div>
-  <div class="line"></div>
-  <div class="line"></div>
-  <div class="line"></div>
-  <div class="line"></div>
-  </div>
+         <div className="lines">
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
+        </div>
         {/* container-fluid hello position-relative pt-3 */}
         <div style={{width:"100%", height:"100%", zIndex:"2"}} >
           <div style={{color: "white", padding: "10%", fontSize:"2.5rem", fontWeight:"bold"}}>
@@ -191,7 +192,14 @@ const users ={
                 <input type="checkbox" name="abonner" onChange={inputHandler} className="form-check-input" id="abonner"/>
                 <label className="form-check-label" htmlFor="abonner">Abonnez-vous à notre newsletter</label>
               </div>
-              <button type="submit" onClick={sendMail}  className="btn btn-primary">Envoyer</button>
+              <button id="tagSubmit" type="submit" onClick={sendMail}  className="btn btn-primary">Envoyer</button>
+              <div id="tagEnvoie" style={{margin:"5px", border:"solid 2px green", padding:"3px",display:"none"}}>
+                  <section class="btn btn-primary" type="button" disabled>
+                  <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                  Envoi d'email en cours...
+              </section>
+              </div>
+              
               <p id="tagMessage" style={{margin:"5px", border:"solid 2px green", padding:"3px",display:"none"}}>Merci pour votre message. Il a été envoyé</p>
             </form>
           </section>

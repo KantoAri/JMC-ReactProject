@@ -14,7 +14,8 @@ export const create = async(req,res)=>{
                 return res.status(400).json({message : "User already exist"});
             }
             const savedData = await newUser.save();
-            res.status(200).json(savedData)
+            //res.status(200).json(savedData)
+            res.status(200).json({message:"user updated successfully"});
     }
     catch(error)
     {
@@ -81,7 +82,8 @@ export const update = async(req,res)=>{
         const updateData = await User.findByIdAndUpdate(id,req.body,{
             new:true
         })
-        res.status(200).json(updateData)
+        //res.status(200).json(updateData)
+        res.status(200).json({message:"Utilisateur modifié avec succès."});
     }
     catch(error)
     {
@@ -99,7 +101,7 @@ export const deleteUser = async(req,res) =>{
         }
 
         const updateData = await User.findByIdAndDelete(id)
-        res.status(200).json({message : "User deleted successfully."})
+        res.status(200).json({message : "Utilisateur supprimé avec succès."})
     }
     catch(error)
     {

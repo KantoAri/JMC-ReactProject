@@ -36,8 +36,6 @@ const Update =()=> {
         .then((response)=>{
           
           toast.success(response.data.message,{position:"top-right"});
-
-            console.log("User updated successfully");
             navigate("/listContact");
         })
         .catch((error)=>{
