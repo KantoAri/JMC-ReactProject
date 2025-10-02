@@ -3,7 +3,11 @@ import React, { useEffect, useState } from 'react';
 import axios from "axios"
 import { Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
-import "../components/Contact/contact.css"
+import "../components/Contact/contact.css";
+
+import { confirmAlert } from 'react-confirm-alert'; // Import
+import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
+        
 const ContactList =()=> {
    const [users,setUsers] = useState([])
   useEffect(()=>{
@@ -21,8 +25,8 @@ const ContactList =()=> {
     fetchData()
   },[]);
 
-const deleteUser = async(userId) =>{
-    await axios.delete(`http://localhost:8000/api/delete/user/${userId}`)
+const actDelete = async(userId) =>{
+ await axios.delete(`http://localhost:8000/api/delete/user/${userId}`)
     .then((response)=>{
       setUsers((prevUser)=>prevUser.filter((user)=>user._id !== userId));
       toast.success(response.data.message,{position:"top-right"});
@@ -30,7 +34,35 @@ const deleteUser = async(userId) =>{
     .catch((error)=>{
       console.log(error);
     })
-  }
+
+}
+const deleteUser = (userId) =>{
+//const deleteUser = async(userId) =>{
+
+
+   confirmAlert({
+      title: 'Confirmation',
+      message: 'Confirmez-vous la suppression de cet enregistrement ?',
+      buttons: [
+        {
+          label: 'Yes',
+          onClick: () => actDelete(userId)
+        },
+        {
+          label: 'No',
+         // onClick: () => alert('Click No')
+        }
+      ]
+    });
+
+
+  // if (window.confirm("Confirmez-vous la suppression de cet enregistrement ?") == true) {
+    
+    
+
+
+  //     }
+    }
 
   return (
     <div className="table-responsive">
