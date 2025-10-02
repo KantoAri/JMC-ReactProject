@@ -34,6 +34,10 @@ const deleteUser = async(userId) =>{
 
   return (
     <div className="table-responsive">
+      <div style={{textAlign:"center"}}>
+          <p style={{fontSize:"40px",margin: "0px"}}> Liste des utilisateurs</p>
+          <p style={{width: "200px",margin: "auto", borderBottom:"5px solid #ecba44ff"}}></p>
+      </div>      
       <Link to="/add" type="button" style={{margin:"5px"}} className="btn btn-dark">
          Ajouter <i class="fa-solid fa-user-plus"></i>
           
@@ -54,15 +58,9 @@ const deleteUser = async(userId) =>{
             <tbody>
                 {users.map((user,index) =>
                 {
-                  let abn = user.abonner;
+                  let abn = (user.abonner === true ? "Oui" : "Non");
                   let isExterne = (user.isExterne === true ? "Oui" : "Non");
-                  if(user.abonner)
-                  {
-                      abn= "Oui";
-                  }
-                  else abn= "Non";
-
-
+              
                   return(
                     
                    

@@ -124,7 +124,7 @@ const navigate = useNavigate();
                 <strong>CONTACT</strong>
               </Link>
             </li>
-            <li className="nav-item mx-md-2">
+            {/* <li className="nav-item mx-md-2">
               <Link
                 className="nav-link"
                 to="/listContact"
@@ -133,7 +133,7 @@ const navigate = useNavigate();
               >
                 <strong>LISTE CONTACTS</strong>
               </Link>
-            </li>
+            </li> */}
             <li className="nav-item mx-md-2">
               <Link
                 className="nav-link"

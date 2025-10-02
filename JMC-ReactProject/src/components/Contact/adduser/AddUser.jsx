@@ -38,7 +38,7 @@ const AddUser =()=> {
       <p style={{fontSize:"40px"}}>Nouvel utilisateur</p>
       <Link to="/listContact" type="button" class="btn btn-secondary">
         <i class="fa-solid fa-backward"></i>
-        Back
+        Retour
       </Link>
        <form onSubmit={submitForm}>
               <div className="form-group">

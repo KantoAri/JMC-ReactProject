@@ -72,7 +72,7 @@ const Connexion =() =>{
         })
     };
   return (
-    <div onLoad={createDefaultUser}>
+    <div  onLoad={createDefaultUser}>
         <div className='formCOnnex'>
             <section   style={{ margin: " auto auto", maxWidth:500}}>
             
@@ -99,7 +99,7 @@ const Connexion =() =>{
                 <button type="submit" 
                 style={{margin:"5px"}}
                 className="btn btn-primary">Connexion</button>
-                <span id='tagMessage' style={{display:"none", color:"red"}}>ttooo</span>
+                <p id='tagMessage' style={{display:"block", color:"red",margin:"5px"}}>coucouc</p>
             </form>
           </section>
         </div>

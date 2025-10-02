@@ -27,7 +27,10 @@ const sendMail=()=>{
     
   })
   .then(()=>{
-    console.log(`Success`)
+    const tagmsg =  document.getElementById("tagMessage");
+           tagmsg.style.display="block";
+           tagmsg.innerText ="Merci pour votre message. Il a été envoyé.";
+    //console.log(`Success`)
   })
   .catch(()=>{
     console.log(`Failure`)
